@@ -26,11 +26,11 @@ const solutions = [
 
 export const Solutions = () => {
   return (
-    <section id="solutions" className="py-24 px-6 bg-[#0a0a0a]">
+    <section id="solutions" className="py-24 px-6 bg-surface/50">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl md:text-6xl font-bold mb-6">Soluções Customizadas</h2>
-          <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
+          <p className="text-foreground/80 text-lg max-w-2xl mx-auto">
             Abordagens específicas para necessidades de alta complexidade técnica e financeira.
           </p>
         </div>
@@ -51,15 +51,15 @@ export const Solutions = () => {
                 fill
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-60" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
               
               <div className="absolute bottom-0 p-8 w-full">
                 <span className="text-accent text-[10px] uppercase tracking-[0.2em] font-bold block mb-2">{sol.focus}</span>
                 <h3 className="font-display text-3xl font-bold mb-4">{sol.title}</h3>
-                <p className="text-foreground/70 text-sm leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-foreground/85 text-sm leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {sol.description}
                 </p>
-                <button className="text-white text-xs font-bold border-b border-accent pb-1">Saber mais</button>
+                <button className="text-foreground text-xs font-bold border-b border-accent pb-1 transition-colors hover:text-accent">Saber mais</button>
               </div>
             </motion.div>
           ))}

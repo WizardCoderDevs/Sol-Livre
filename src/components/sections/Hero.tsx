@@ -16,7 +16,7 @@ export const Hero = () => {
           className="object-cover opacity-60"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background" />
       </div>
 
       {/* Content */}
@@ -46,7 +46,7 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mx-auto max-w-2xl text-lg md:text-xl text-foreground/70 mb-12"
+          className="mx-auto max-w-2xl text-lg md:text-xl text-foreground/90 mb-12"
         >
           Projetamos sua autonomia energética. No mercado de elite, o sol não é apenas economia; é um ativo estratégico de valorização patrimonial e independência total.
         </motion.p>

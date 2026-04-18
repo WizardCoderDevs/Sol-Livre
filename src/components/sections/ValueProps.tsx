@@ -30,7 +30,7 @@ export const ValueProps = () => {
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
               Energia como <span className="text-accent">Inteligência Estratégica</span>
             </h2>
-            <p className="text-foreground/60 text-lg">
+            <p className="text-foreground/90 text-lg">
               Deixamos para trás a era da simples &quot;economia na conta&quot;. Na Sol Livre, focamos em pilares que blindam seu patrimônio e garantem sua independência.
             </p>
           </div>
@@ -53,7 +53,7 @@ export const ValueProps = () => {
                 <feature.icon className="w-6 h-6" />
               </div>
               <h3 className="font-display text-2xl font-bold mb-4">{feature.title}</h3>
-              <p className="text-foreground/60 leading-relaxed">
+              <p className="text-foreground/80 leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

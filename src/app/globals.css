@@ -1,11 +1,11 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #050505;
-  --foreground: #f9f9f9;
-  --accent: #ffd700;
-  --surface: #121212;
-  --surface-border: rgba(255, 255, 255, 0.1);
+  --background: #ffffff;
+  --foreground: #064e3b;
+  --accent: #10b981;
+  --surface: #f0fdf4;
+  --surface-border: rgba(6, 78, 59, 0.08);
 }
 
 @theme inline {
@@ -28,25 +28,26 @@ body {
 
 /* Glassmorphism Utilities */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--surface-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
 }
 
 .glass-accent {
-  background: rgba(255, 215, 0, 0.05);
+  background: rgba(16, 185, 129, 0.05);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 /* Custom Gradients */
 .bg-gradient-solar {
-  background: linear-gradient(135deg, #050505 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #ffffff, #ffd700);
+  background: linear-gradient(to right, #064e3b, #10b981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
