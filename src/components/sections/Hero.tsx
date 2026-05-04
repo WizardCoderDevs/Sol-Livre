@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import heroImg from '../../app/hero.png'
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center pt-32 pb-20 overflow-hidden">
+    <section className="relative min-h-[90vh] md:min-h-screen w-full flex items-center justify-center pt-24 md:pt-32 pb-20 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -27,7 +28,7 @@ export const Hero = () => {
            transition={{ duration: 0.8, ease: "easeOut" }}
            className="mb-6 inline-block glass px-4 py-1.5 rounded-full"
         >
-          <span className="text-[10px] uppercase tracking-[0.3em] font-medium text-accent">
+          <span className="text-fluid-small uppercase tracking-[0.3em] font-medium text-accent">
             Consultoria de Inteligência Energética
           </span>
         </motion.div>
@@ -36,7 +37,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="font-display text-5xl md:text-8xl font-bold leading-tight mb-8"
+          className="font-display text-fluid-h1 font-bold leading-tight mb-8"
         >
           Sua energia, <br />
           <span className="text-gradient">suas regras.</span>
@@ -46,7 +47,7 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mx-auto max-w-2xl text-lg md:text-xl text-foreground/90 mb-12"
+          className="mx-auto max-w-2xl text-fluid-body text-foreground/90 mb-12"
         >
           Projetamos sua autonomia energética. No mercado de elite, o sol não é apenas economia; é um ativo estratégico de valorização patrimonial e independência total.
         </motion.p>
@@ -57,12 +58,12 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="flex flex-col md:flex-row gap-4 justify-center"
         >
-          <button className="rounded-full bg-accent px-10 py-4 text-sm font-bold text-background transition-all hover:shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:scale-105 active:scale-95">
+          <Link href="/#cta" className="rounded-full bg-accent px-10 py-4 text-sm font-bold text-background transition-all hover:shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:scale-105 active:scale-95">
             Iniciar Consultoria
-          </button>
-          <button className="rounded-full glass px-10 py-4 text-sm font-bold text-foreground transition-all hover:bg-white/10">
+          </Link>
+          <Link href="/#solutions" className="rounded-full glass px-10 py-4 text-sm font-bold text-foreground transition-all hover:bg-white/10">
             Conhecer Soluções
-          </button>
+          </Link>
         </motion.div>
       </div>
 

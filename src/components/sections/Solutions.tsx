@@ -29,13 +29,13 @@ export const Solutions = () => {
     <section id="solutions" className="py-24 px-6 bg-surface/50">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-6xl font-bold mb-6">Soluções Customizadas</h2>
-          <p className="text-foreground/80 text-lg max-w-2xl mx-auto">
+          <h2 className="font-display text-fluid-h2 font-bold mb-6">Soluções Customizadas</h2>
+          <p className="text-foreground/80 text-fluid-body max-w-2xl mx-auto">
             Abordagens específicas para necessidades de alta complexidade técnica e financeira.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {solutions.map((sol, idx) => (
             <motion.div
               key={idx}
@@ -43,7 +43,7 @@ export const Solutions = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="relative aspect-[4/5] overflow-hidden rounded-3xl group"
+              className="relative aspect-square lg:aspect-[4/5] overflow-hidden rounded-3xl group shadow-sm"
             >
               <Image 
                 src={sol.image} 
@@ -51,15 +51,18 @@ export const Solutions = () => {
                 fill
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-60" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-transparent" />
               
-              <div className="absolute bottom-0 p-8 w-full">
-                <span className="text-accent text-[10px] uppercase tracking-[0.2em] font-bold block mb-2">{sol.focus}</span>
-                <h3 className="font-display text-3xl font-bold mb-4">{sol.title}</h3>
-                <p className="text-foreground/85 text-sm leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute top-0 p-6 lg:p-8 w-full">
+                <span className="text-accent text-fluid-small uppercase tracking-[0.2em] font-bold block mb-2">{sol.focus}</span>
+                <h3 className="font-display text-fluid-h3 font-bold mb-4">{sol.title}</h3>
+                <p className="text-foreground/85 text-fluid-body leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {sol.description}
                 </p>
-                <button className="text-foreground text-xs font-bold border-b border-accent pb-1 transition-colors hover:text-accent">Saber mais</button>
+              </div>
+
+              <div className="absolute bottom-0 p-6 lg:p-8 w-full">
+                <button className="text-foreground text-fluid-small font-bold border-b border-accent pb-1 transition-colors hover:text-accent">Saber mais</button>
               </div>
             </motion.div>
           ))}

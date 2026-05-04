@@ -8,8 +8,8 @@ export const Trust = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:max-w-xs text-center md:text-left">
-            <h3 className="text-[10px] uppercase font-bold tracking-[0.3em] text-accent mb-2">Curadoria Independente</h3>
-            <p className="text-foreground/70 text-xs">Apenas tecnologias líderes globais Tier 1.</p>
+            <h3 className="text-fluid-small uppercase font-bold tracking-[0.3em] text-accent mb-2">Curadoria Independente</h3>
+            <p className="text-foreground/70 text-fluid-small">Apenas tecnologias líderes globais Tier 1.</p>
           </div>
           
           <div className="flex flex-wrap justify-center gap-10 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">

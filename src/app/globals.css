@@ -6,6 +6,13 @@
   --accent: #10b981;
   --surface: #f0fdf4;
   --surface-border: rgba(6, 78, 59, 0.08);
+
+  /* Fluid Typography Variables */
+  --font-fluid-h1: clamp(2.25rem, 8vw, 5rem);
+  --font-fluid-h2: clamp(1.75rem, 5vw, 3.5rem);
+  --font-fluid-h3: clamp(1.25rem, 3vw, 2.25rem);
+  --font-fluid-body: clamp(1rem, 1.1vw, 1.125rem);
+  --font-fluid-small: clamp(0.8125rem, 0.7vw, 0.875rem);
 }
 
 @theme inline {
@@ -17,6 +24,13 @@
   
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Outfit', system-ui, sans-serif;
+
+  /* Extending theme with fluid sizes */
+  --font-size-fluid-h1: var(--font-fluid-h1);
+  --font-size-fluid-h2: var(--font-fluid-h2);
+  --font-size-fluid-h3: var(--font-fluid-h3);
+  --font-size-fluid-body: var(--font-fluid-body);
+  --font-size-fluid-small: var(--font-fluid-small);
 }
 
 body {
@@ -51,6 +65,13 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Typography Utilities */
+.text-fluid-h1 { font-size: var(--font-fluid-h1); line-height: 1.1; }
+.text-fluid-h2 { font-size: var(--font-fluid-h2); line-height: 1.2; }
+.text-fluid-h3 { font-size: var(--font-fluid-h3); line-height: 1.3; }
+.text-fluid-body { font-size: var(--font-fluid-body); line-height: 1.6; }
+.text-fluid-small { font-size: var(--font-fluid-small); line-height: 1.4; }
 
 /* Hide scrollbar but allow functional scrolling */
 .no-scrollbar::-webkit-scrollbar {

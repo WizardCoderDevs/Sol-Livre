@@ -45,7 +45,7 @@ export const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-4 flex flex-col gap-4 p-8 glass rounded-3xl md:hidden"
+          className="mt-4 flex flex-col gap-6 p-8 glass rounded-3xl md:hidden shadow-2xl"
         >
           <NavLink href="#solutions" onClick={() => setIsOpen(false)}>Soluções</NavLink>
           <NavLink href="#roi" onClick={() => setIsOpen(false)}>ROI e Ativos</NavLink>

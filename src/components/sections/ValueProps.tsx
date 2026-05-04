@@ -25,12 +25,12 @@ export const ValueProps = () => {
   return (
     <section id="roi" className="py-24 px-6 bg-background">
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="font-display text-fluid-h2 font-bold mb-6">
               Energia como <span className="text-accent">Inteligência Estratégica</span>
             </h2>
-            <p className="text-foreground/90 text-lg">
+            <p className="text-foreground/90 text-fluid-body">
               Deixamos para trás a era da simples &quot;economia na conta&quot;. Na Sol Livre, focamos em pilares que blindam seu patrimônio e garantem sua independência.
             </p>
           </div>
@@ -39,7 +39,7 @@ export const ValueProps = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, idx) => (
             <motion.div
               key={idx}
@@ -47,13 +47,13 @@ export const ValueProps = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.2 }}
-              className="p-8 glass rounded-3xl group hover:border-accent/30 transition-colors"
+              className="p-6 md:p-8 glass rounded-3xl group hover:border-accent/30 transition-colors shadow-sm"
             >
               <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-background transition-colors text-accent">
                 <feature.icon className="w-6 h-6" />
               </div>
-              <h3 className="font-display text-2xl font-bold mb-4">{feature.title}</h3>
-              <p className="text-foreground/80 leading-relaxed">
+              <h3 className="font-display text-fluid-h3 font-bold mb-4">{feature.title}</h3>
+              <p className="text-foreground/80 text-fluid-body leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
