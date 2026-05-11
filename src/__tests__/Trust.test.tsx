@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { Trust } from '@/components/sections/Trust'
 import { trust } from '@/config/site'
+import { describe, expect, it } from 'vitest'
 
 describe('Trust', () => {
   it('renders section with title and subtitle', () => {

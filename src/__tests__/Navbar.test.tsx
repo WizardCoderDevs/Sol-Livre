@@ -1,11 +1,13 @@
 import { render, screen } from '@testing-library/react'
 import { Navbar } from '@/components/layout/Navbar'
 import { company, navigation } from '@/config/site'
+import { describe, expect, it } from 'vitest'
 
 describe('Navbar', () => {
   it('renders company name correctly', () => {
     render(<Navbar />)
-    expect(screen.getByText(company.name.split(' ')[0])).toBeInTheDocument()
+    const logo = screen.getByRole('link', { name: /Sol Livre/i })
+    expect(logo).toBeInTheDocument()
   })
 
   it('renders desktop navigation links', () => {

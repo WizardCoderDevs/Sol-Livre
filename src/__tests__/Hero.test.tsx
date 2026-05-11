@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { Hero } from '@/components/sections/Hero'
 import { hero as heroConfig } from '@/config/site'
+import { describe, expect, it } from 'vitest'
 
 describe('Hero', () => {
   it('renders badge text', () => {

@@ -22,6 +22,7 @@ export const navigation = {
   roi: '#roi',
   portfolio: '#',
   about: '#about',
+  inteligencia: '/inteligencia-energetica',
   ctaButton: 'Falar com Consultor',
 } as const
 

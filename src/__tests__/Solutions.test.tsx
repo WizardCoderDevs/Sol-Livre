@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { Solutions } from '@/components/sections/Solutions'
+import { describe, expect, it } from 'vitest'
 
 const solutions = [
   {

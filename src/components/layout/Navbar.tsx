@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { Logo } from '@/components/ui/Logo'
 import { company, navigation } from '@/config/site'
 
 export const Navbar = () => {
@@ -12,17 +13,10 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-6">
       <div className="mx-auto flex max-w-7xl items-center justify-between glass px-8 py-4 rounded-full">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative h-8 w-8 flex items-center justify-center">
-            <div className="absolute inset-0 bg-accent rounded-full blur-[8px] opacity-20 group-hover:opacity-40 transition-opacity" />
-            <div className="h-4 w-4 rounded-full border-2 border-accent" />
-          </div>
-          <span className="font-display text-xl font-bold tracking-[0.2em] text-foreground">
-            {company.name.split(' ')[0]} <span className="text-accent">{company.name.split(' ')[1]}</span>
-          </span>
-        </Link>
+        <Logo />
 
         <div className="hidden md:flex items-center gap-8">
+          <NavLink href={navigation.inteligencia}>Inteligência</NavLink>
           <NavLink href={navigation.solutions}>Soluções</NavLink>
           <NavLink href={navigation.roi}>ROI e Ativos</NavLink>
           <NavLink href={navigation.about}>Consultoria</NavLink>
