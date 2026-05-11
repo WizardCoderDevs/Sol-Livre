@@ -25,6 +25,7 @@ export const Footer = () => {
           <a href={navigation.solutions} className="hover:text-accent transition-colors">Soluções</a>
           <a href={navigation.roi} className="hover:text-accent transition-colors">Rentabilidade</a>
           <a href={navigation.portfolio} className="hover:text-accent transition-colors">Portfólio</a>
+          <a href="/inteligencia-energetica" className="hover:text-accent transition-colors">Assinatura Solar</a>
           <a href="/politica-de-privacidade" className="hover:text-accent transition-colors">Política de Privacidade</a>
         </div>
       </div>

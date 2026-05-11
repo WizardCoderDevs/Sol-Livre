@@ -16,7 +16,6 @@ export const Navbar = () => {
         <Logo />
 
         <div className="hidden md:flex items-center gap-8">
-          <NavLink href={navigation.inteligencia}>Inteligência</NavLink>
           <NavLink href={navigation.solutions}>Soluções</NavLink>
           <NavLink href={navigation.roi}>ROI e Ativos</NavLink>
           <NavLink href={navigation.about}>Consultoria</NavLink>

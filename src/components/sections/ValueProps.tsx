@@ -1,7 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Shield, TrendingUp, Home, ArrowRight } from 'lucide-react'
+import { Shield, TrendingUp, Home, ArrowRight, ChevronDown } from 'lucide-react'
 
 const features = [
   {
@@ -22,6 +23,12 @@ const features = [
 ]
 
 export const ValueProps = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+
+  const toggleExpand = (idx: number) => {
+    setExpandedIndex(expandedIndex === idx ? null : idx)
+  }
+
   return (
     <section id="roi" className="py-24 px-6 bg-background">
       <div className="mx-auto max-w-7xl">
@@ -47,15 +54,24 @@ export const ValueProps = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.2 }}
-              className="p-6 md:p-8 glass rounded-3xl group hover:border-accent/30 transition-colors shadow-sm"
+              className="p-6 md:p-8 glass rounded-3xl group hover:border-accent/30 transition-colors shadow-sm cursor-pointer"
+              onClick={() => toggleExpand(idx)}
             >
-              <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-background transition-colors text-accent">
-                <feature.icon className="w-6 h-6" />
+              <div className="flex justify-between items-start mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-background transition-colors">
+                  <feature.icon className="w-6 h-6" />
+                </div>
+                <button className="md:hidden text-accent p-2">
+                  <ChevronDown className={`w-5 h-5 transition-transform ${expandedIndex === idx ? 'rotate-180' : ''}`} />
+                </button>
               </div>
               <h3 className="font-display text-fluid-h3 font-bold mb-4">{feature.title}</h3>
-              <p className="text-foreground/80 text-fluid-body leading-relaxed">
+              <div className={`text-foreground/80 text-fluid-body leading-relaxed ${expandedIndex === idx || 'md:block hidden'}`}>
                 {feature.description}
-              </p>
+              </div>
+              <button className="md:hidden mt-4 text-sm font-bold text-accent flex items-center gap-1">
+                {expandedIndex === idx ? 'Ver menos' : 'Saiba mais'}
+              </button>
             </motion.div>
           ))}
         </div>

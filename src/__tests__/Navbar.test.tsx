@@ -16,6 +16,7 @@ describe('Navbar', () => {
     expect(screen.getByText('ROI e Ativos')).toBeInTheDocument()
     expect(screen.getByText('Consultoria')).toBeInTheDocument()
     expect(screen.getByText('Privacidade')).toBeInTheDocument()
+    expect(screen.queryByText('Inteligência')).not.toBeInTheDocument()
   })
 
   it('renders CTA button', () => {

@@ -20,6 +20,7 @@ describe('Footer', () => {
     expect(screen.getByText('Soluções')).toBeInTheDocument()
     expect(screen.getByText('Rentabilidade')).toBeInTheDocument()
     expect(screen.getByText('Portfólio')).toBeInTheDocument()
+    expect(screen.getByText('Assinatura Solar')).toBeInTheDocument()
     expect(screen.getByText('Política de Privacidade')).toBeInTheDocument()
   })
 

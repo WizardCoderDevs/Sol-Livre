@@ -46,7 +46,7 @@ describe('Solutions', () => {
 
   it('renders Saber mais button for each card', () => {
     render(<Solutions />)
-    const buttons = screen.getAllByText('Saber mais')
+    const buttons = screen.getAllByRole('button', { name: /Saber mais|Ver menos/i })
     expect(buttons).toHaveLength(3)
   })
 })

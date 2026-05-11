@@ -1,7 +1,8 @@
 'use client'
 
+import Link from 'next/link'
 import { Footer } from '@/components/layout/Footer'
-import { cta, copyright } from '@/config/site'
+import { cta, copyright, contact } from '@/config/site'
 
 export const CTA = () => {
   return (
@@ -17,13 +18,10 @@ export const CTA = () => {
           {cta.subtitle}
         </p>
         
-        <div className="flex flex-col md:flex-row gap-6 justify-center mb-16">
-          <button className="w-full md:w-auto rounded-full bg-accent px-10 py-5 text-sm font-bold text-background transition-transform hover:scale-105">
+        <div className="flex justify-center mb-16">
+          <Link href={contact.phoneLink} className="w-full md:w-auto rounded-full bg-accent px-10 py-5 text-sm font-bold text-background transition-transform hover:scale-105">
             {cta.primaryButton}
-          </button>
-          <button className="w-full md:w-auto rounded-full border border-foreground/10 px-10 py-5 text-sm font-bold text-foreground transition-all hover:bg-black/5">
-            {cta.secondaryButton}
-          </button>
+          </Link>
         </div>
 
         <Footer />

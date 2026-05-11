@@ -1,7 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { ChevronDown, MousePointer2 } from 'lucide-react'
 
 const solutions = [
   {
@@ -25,6 +27,12 @@ const solutions = [
 ]
 
 export const Solutions = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+
+  const toggleExpand = (idx: number) => {
+    setExpandedIndex(expandedIndex === idx ? null : idx)
+  }
+
   return (
     <section id="solutions" className="py-24 px-6 bg-surface/50">
       <div className="mx-auto max-w-7xl">
@@ -43,7 +51,8 @@ export const Solutions = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="relative aspect-square lg:aspect-[4/5] overflow-hidden rounded-3xl group shadow-sm"
+              className="relative aspect-square lg:aspect-[4/5] overflow-hidden rounded-3xl group shadow-sm cursor-pointer lg:transition-all lg:duration-300 lg:hover:shadow-xl lg:hover:scale-[1.02] lg:hover:border lg:hover:border-accent/30"
+              onClick={() => toggleExpand(idx)}
             >
               <Image
                 src={sol.image}
@@ -54,16 +63,36 @@ export const Solutions = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-transparent" />
               
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="absolute top-4 right-4 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <motion.div 
+                  animate={{ x: [0, 5, 0], y: [0, -3, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                  className="bg-accent/20 backdrop-blur-sm p-2 rounded-full"
+                >
+                  <MousePointer2 className="w-4 h-4 text-accent" />
+                </motion.div>
+              </motion.div>
+
               <div className="absolute top-0 p-6 lg:p-8 w-full">
                 <span className="text-accent text-fluid-small uppercase tracking-[0.2em] font-bold block mb-2">{sol.focus}</span>
                 <h3 className="font-display text-fluid-h3 font-bold mb-4">{sol.title}</h3>
-                <p className="text-foreground/85 text-fluid-body leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className={`text-foreground/85 text-fluid-body leading-relaxed mb-6 transition-opacity duration-300 ${expandedIndex === idx ? 'block' : 'hidden group-hover:block'}`}>
                   {sol.description}
                 </p>
               </div>
 
-              <div className="absolute bottom-0 p-6 lg:p-8 w-full">
-                <button className="text-foreground text-fluid-small font-bold border-b border-accent pb-1 transition-colors hover:text-accent">Saber mais</button>
+              <div className="absolute bottom-0 p-6 lg:p-8 w-full flex items-center justify-between">
+                <button className="lg:hidden text-foreground text-fluid-small font-bold border-b border-accent pb-1 transition-colors hover:text-accent">
+                  {expandedIndex === idx ? 'Ver menos' : 'Saber mais'}
+                </button>
+                <button className="lg:hidden text-accent p-1">
+                  <ChevronDown className={`w-5 h-5 transition-transform ${expandedIndex === idx ? 'rotate-180' : ''}`} />
+                </button>
               </div>
             </motion.div>
           ))}
