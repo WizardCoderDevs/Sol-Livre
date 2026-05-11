@@ -61,7 +61,7 @@ export const CTA = () => {
         </div>
         
         <div className="mt-20 pt-8 border-t border-surface-border text-center text-fluid-small text-foreground/50">
-          © 2026 Sol Livre Consultoria. Todos os direitos reservados. Design Pro by Antigravity.
+          © 2026 Sol Livre Consultoria. Todos os direitos reservados.
         </div>
       </div>
     </section>
