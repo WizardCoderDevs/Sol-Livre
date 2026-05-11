@@ -21,6 +21,12 @@ export const Navbar = () => {
           <NavLink href={navigation.roi}>ROI e Ativos</NavLink>
           <NavLink href={navigation.about}>Consultoria</NavLink>
           <Link
+            href="/politica-de-privacidade"
+            className="text-sm font-medium text-foreground/70 transition-colors hover:text-accent"
+          >
+            Privacidade
+          </Link>
+          <Link
             href="#cta"
             className="rounded-full bg-accent px-6 py-2 text-sm font-bold text-background transition-transform hover:scale-105 active:scale-95"
           >
@@ -42,6 +48,7 @@ export const Navbar = () => {
           <NavLink href={navigation.solutions} onClick={() => setIsOpen(false)}>Soluções</NavLink>
           <NavLink href={navigation.roi} onClick={() => setIsOpen(false)}>ROI e Ativos</NavLink>
           <NavLink href={navigation.about} onClick={() => setIsOpen(false)}>Consultoria</NavLink>
+          <NavLink href="/politica-de-privacidade" onClick={() => setIsOpen(false)}>Privacidade</NavLink>
           <Link
             href="#cta"
             className="rounded-full bg-accent px-6 py-3 text-center text-sm font-bold text-background"
