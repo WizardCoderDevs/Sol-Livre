@@ -5,16 +5,45 @@ import './globals.css'
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
+  display: 'swap',
 })
 
 const outfit = Outfit({
   variable: '--font-outfit',
   subsets: ['latin'],
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Sol Livre | Consultoria em Inteligência Energética',
-  description: 'Projetamos autonomia energética e valorização patrimonial para residências de elite, agronegócio e indústrias.',
+  title: {
+    default: 'Sol Livre | Consultoria em Inteligência Energética',
+    template: '%s | Sol Livre',
+  },
+  description:
+    'Projetamos autonomia energética e valorização patrimonial para residências de elite, agronegócio e indústrias.',
+  metadataBase: new URL('https://sollivre.com.br'),
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://sollivre.com.br',
+    siteName: 'Sol Livre',
+    title: 'Sol Livre | Consultoria em Inteligência Energética',
+    description:
+      'Projetamos autonomia energética e valorização patrimonial para residências de elite, agronegócio e indústrias.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sol Livre | Consultoria em Inteligência Energética',
+    description:
+      'Projetamos autonomia energética e valorização patrimonial.',
+  },
+  icons: {
+    icon: '/Logo.ico',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({

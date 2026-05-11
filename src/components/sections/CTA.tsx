@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Phone } from 'lucide-react'
 import { FaInstagram, FaLinkedin, FaFacebook } from 'react-icons/fa'
 import { company, contact, social, navigation, cta, copyright } from '@/config/site'

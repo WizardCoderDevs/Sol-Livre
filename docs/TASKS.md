@@ -28,7 +28,7 @@ Este documento rastreia as tarefas de melhoria identificadas na análise do proj
 
 ---
 
-### [ ] Implementar testes básicos para componentes principais
+### [x] Implementar testes básicos para componentes principais
 
 **Descrição:** Nenhum teste implementado. Necessário cobertura mínima para componentes críticos.
 
@@ -50,15 +50,15 @@ Este documento rastreia as tarefas de melhoria identificadas na análise do proj
 **Descrição:** SEO básico implementado, mas faltam componentes importantes.
 
 **Tarefas:**
-- [ ] OG Tags para redes sociais
-- [ ] `sitemap.xml` dinâmico
-- [ ] `robots.txt` configurado
-- [ ] Meta tags de descrição otimizadas
-- [ ] Open Graph images
+- [x] OG Tags para redes sociais
+- [x] `sitemap.xml` dinâmico
+- [x] `robots.txt` configurado
+- [x] Meta tags de descrição otimizadas
+- [ ] Open Graph images (requer asset personalizado a ser adicionado em `public/`)
 
 ---
 
-### [ ] Limpar assets não utilizados do public/
+### [x] Limpar assets não utilizados do public/
 
 **Descrição:** Arquivos SVG padrão do create-next-app ainda estão presentes.
 
@@ -73,7 +73,7 @@ Este documento rastreia as tarefas de melhoria identificadas na análise do proj
 
 ## Baixa Prioridade
 
-### [ ] Substituir favicon padrão
+### [x] Substituir favicon padrão
 
 **Descrição:** Favicon ainda é o padrão do Next.js.
 
@@ -81,7 +81,7 @@ Este documento rastreia as tarefas de melhoria identificadas na análise do proj
 
 ---
 
-### [ ] Corrigir configuração do pnpm-workspace.yaml
+### [x] Corrigir configuração do pnpm-workspace.yaml
 
 **Descrição:** Formato incomum para um projeto single-package.
 
@@ -98,8 +98,8 @@ ignoredBuiltDependencies: []
 
 - [x] Análise do projeto concluída
 - [x] Tarefa 1: Extrair dados hardcoded
-- [ ] Tarefa 2: Implementar testes
-- [ ] Tarefa 3: SEO completo
-- [ ] Tarefa 4: Limpar assets
-- [ ] Tarefa 5: Favicon
-- [ ] Tarefa 6: pnpm-workspace.yaml
+- [x] Tarefa 2: Implementar testes
+- [x] Tarefa 3: SEO completo
+- [x] Tarefa 4: Limpar assets
+- [x] Tarefa 5: Favicon
+- [x] Tarefa 6: pnpm-workspace.yaml

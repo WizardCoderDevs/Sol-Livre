@@ -8,7 +8,7 @@ export default defineConfig({
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,jsx,ts,tsx}'],
     globals: true,
-    setupFiles: ['@testing-library/jest-dom'],
+    setupFiles: ['@testing-library/jest-dom', './src/__tests__/setup.ts'],
   },
   resolve: {
     alias: {

@@ -45,11 +45,12 @@ export const Solutions = () => {
               transition={{ delay: idx * 0.1 }}
               className="relative aspect-square lg:aspect-[4/5] overflow-hidden rounded-3xl group shadow-sm"
             >
-              <Image 
-                src={sol.image} 
-                alt={sol.title} 
+              <Image
+                src={sol.image}
+                alt={sol.title}
                 fill
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-60" 
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-60"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-transparent" />
               

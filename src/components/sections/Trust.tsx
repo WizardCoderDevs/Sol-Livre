@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { trust } from '@/config/site'
 
 export const Trust = () => {
