@@ -15,6 +15,7 @@ describe('Navbar', () => {
     expect(screen.getByText('Soluções')).toBeInTheDocument()
     expect(screen.getByText('ROI e Ativos')).toBeInTheDocument()
     expect(screen.getByText('Consultoria')).toBeInTheDocument()
+    expect(screen.getByText('Privacidade')).toBeInTheDocument()
   })
 
   it('renders CTA button', () => {
@@ -33,5 +34,6 @@ describe('Navbar', () => {
     const menuButton = document.querySelector('button')
     menuButton?.click()
     expect(screen.getByText('Soluções')).toBeInTheDocument()
+    expect(screen.getByText('Privacidade')).toBeInTheDocument()
   })
 })
