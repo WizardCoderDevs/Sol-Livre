@@ -4,11 +4,11 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import heroImg from '../../app/hero.png'
+import { hero as heroConfig } from '@/config/site'
 
 export const Hero = () => {
   return (
     <section className="relative min-h-[90vh] md:min-h-screen w-full flex items-center justify-center pt-24 md:pt-32 pb-20 overflow-hidden">
-      {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
           src={heroImg}
@@ -20,7 +20,6 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background" />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
         <motion.div
            initial={{ opacity: 0, y: 30 }}
@@ -29,7 +28,7 @@ export const Hero = () => {
            className="mb-6 inline-block glass px-4 py-1.5 rounded-full"
         >
           <span className="text-fluid-small uppercase tracking-[0.3em] font-medium text-accent">
-            Consultoria de Inteligência Energética
+            {heroConfig.badge}
           </span>
         </motion.div>
 
@@ -39,8 +38,8 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="font-display text-fluid-h1 font-bold leading-tight mb-8"
         >
-          Sua energia, <br />
-          <span className="text-gradient">suas regras.</span>
+          {heroConfig.title} <br />
+          <span className="text-gradient">{heroConfig.titleAccent}</span>
         </motion.h1>
 
         <motion.p 
@@ -49,7 +48,7 @@ export const Hero = () => {
           transition={{ duration: 1, delay: 0.6 }}
           className="mx-auto max-w-2xl text-fluid-body text-foreground/90 mb-12"
         >
-          Projetamos sua autonomia energética. No mercado de elite, o sol não é apenas economia; é um ativo estratégico de valorização patrimonial e independência total.
+          {heroConfig.description}
         </motion.p>
 
         <motion.div
@@ -59,15 +58,14 @@ export const Hero = () => {
           className="flex flex-col md:flex-row gap-4 justify-center"
         >
           <Link href="/#cta" className="rounded-full bg-accent px-10 py-4 text-sm font-bold text-background transition-all hover:shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:scale-105 active:scale-95">
-            Iniciar Consultoria
+            {heroConfig.primaryButton}
           </Link>
           <Link href="/#solutions" className="rounded-full glass px-10 py-4 text-sm font-bold text-foreground transition-all hover:bg-white/10">
-            Conhecer Soluções
+            {heroConfig.secondaryButton}
           </Link>
         </motion.div>
       </div>
 
-      {/* Decorative Floating Element */}
       <motion.div 
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
