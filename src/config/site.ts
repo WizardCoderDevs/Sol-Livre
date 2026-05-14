@@ -12,9 +12,9 @@ export const contact = {
 } as const
 
 export const social = {
-  instagram: 'https://www.instagram.com/sollivre.eco.br/',
-  linkedin: 'https://www.linkedin.com/company/sollivre/?viewAsMember=true',
-  facebook: 'https://www.facebook.com/sollivre.eco.br/',
+  instagram: 'https://instagram.com/sollivre.eco.br/',
+  linkedin: 'https://linkedin.com/company/sollivre',
+  facebook: 'https://facebook.com/sollivre.eco.br/',
 } as const
 
 export const navigation = {
