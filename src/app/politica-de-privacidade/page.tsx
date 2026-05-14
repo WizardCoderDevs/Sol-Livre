@@ -3,7 +3,17 @@ import { company } from '@/config/site'
 
 export const metadata: Metadata = {
   title: 'Política de Privacidade',
-  description: 'Política de Privacidade da Sol Livre Consultoria',
+  description:
+    'Política de Privacidade da Sol Livre Consultoria. Conheça como protegemos seus dados e sua privacidade.',
+  alternates: {
+    canonical: 'https://sollivre.com.br/politica-de-privacidade',
+  },
+  openGraph: {
+    title: 'Política de Privacidade | Sol Livre',
+    description:
+      'Política de Privacidade da Sol Livre Consultoria.',
+    url: 'https://sollivre.com.br/politica-de-privacidade',
+  },
 }
 
 export default function PoliticaDePrivacidade() {

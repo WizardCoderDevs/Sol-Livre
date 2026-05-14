@@ -1,6 +1,12 @@
 import type { Metadata } from 'next'
 import { Inter, Outfit } from 'next/font/google'
 import Script from 'next/script'
+import {
+  OrganizationJsonLd,
+  WebSiteJsonLd,
+  LocalBusinessJsonLd,
+  organizationMetadata,
+} from '@/components/seo/StructuredData'
 import './globals.css'
 
 const inter = Inter({
@@ -16,6 +22,7 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
+  ...organizationMetadata,
   title: {
     default: 'Sol Livre | Consultoria em Inteligência Energética',
     template: '%s | Sol Livre',
@@ -23,6 +30,13 @@ export const metadata: Metadata = {
   description:
     'Projetamos autonomia energética e valorização patrimonial para residências de elite, agronegócio e indústrias.',
   metadataBase: new URL('https://sollivre.com.br'),
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sol Livre | Consultoria em Inteligência Energética',
+    description:
+      'Projetamos autonomia energética e valorização patrimonial.',
+    images: ['/og-image.png'],
+  },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
@@ -31,19 +45,42 @@ export const metadata: Metadata = {
     title: 'Sol Livre | Consultoria em Inteligência Energética',
     description:
       'Projetamos autonomia energética e valorização patrimonial para residências de elite, agronegócio e indústrias.',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Sol Livre | Consultoria em Inteligência Energética',
-    description:
-      'Projetamos autonomia energética e valorização patrimonial.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Sol Livre | Consultoria em Inteligência Energética',
+      },
+    ],
   },
   icons: {
     icon: '/Logo.ico',
   },
+  keywords: [
+    'consultoria energética',
+    'energia solar',
+    'inteligência energética',
+    'economia de energia',
+    'fazendas solares',
+    'autonomia energética',
+    'painéis solares',
+    'agronegócio',
+    'sustentabilidade',
+  ],
+  authors: [{ name: 'Sol Livre Consultoria' }],
+  creator: 'Sol Livre Consultoria',
+  publisher: 'Sol Livre Consultoria',
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
@@ -58,6 +95,9 @@ export default function RootLayout({
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
       <body className="bg-background text-foreground selection:bg-accent/30 min-h-full font-sans">
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
+        <LocalBusinessJsonLd />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-MQVQ2D95"

@@ -2,7 +2,8 @@ export const company = {
   name: 'SOL LIVRE',
   fullName: 'Sol Livre Consultoria',
   tagline: 'Consultoria de Inteligência Energética. Especialistas em sistemas híbridos e ativos financeiros solares.',
-  description: 'Consultoria de Inteligência Energética',
+  description: 'Projetamos autonomia energética e valorização patrimonial para residências de elite, agronegócio e indústrias.',
+  url: 'https://sollivre.com.br',
 } as const
 
 export const contact = {
