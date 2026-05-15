@@ -1,9 +1,32 @@
+export interface RichTextNode {
+  type: string
+  text?: string
+  version?: number
+  children?: RichTextNode[]
+  fields?: Record<string, unknown>
+  format?: number
+  indent?: number
+  direction?: 'ltr' | 'rtl' | null
+}
+
+export interface RichTextContent {
+  root: {
+    type: string
+    children: RichTextNode[]
+    direction?: 'ltr' | 'rtl' | null
+    format?: string
+    indent?: number
+    version?: number
+  }
+  [key: string]: unknown
+}
+
 export interface Post {
   id: number
   title: string
   slug: string
   heroImage?: Media
-  content: unknown
+  content: RichTextContent
   categories?: Category[]
   meta?: {
     title?: string

@@ -8,6 +8,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { Post } from '@/lib/cms/types'
 import { BlogCard } from '@/components/blog/BlogCard'
+import RichText from '@/components/RichText'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -173,11 +174,9 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
 
           <div className="mx-auto max-w-7xl px-6 pb-16">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-xl text-foreground/80">
-                {post.meta?.description || post.title}
-              </p>
-            </div>
+            {post.content && typeof post.content === 'object' && 'root' in post.content && (
+              <RichText data={post.content} className="mx-auto max-w-4xl" />
+            )}
           </div>
         </article>
 
