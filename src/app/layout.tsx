@@ -92,9 +92,10 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
+      suppressHydrationWarning
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
-      <body className="bg-background text-foreground selection:bg-accent/30 min-h-full font-sans">
+      <body className="bg-background text-foreground selection:bg-accent/30 min-h-full font-sans" suppressHydrationWarning>
         <OrganizationJsonLd />
         <WebSiteJsonLd />
         <LocalBusinessJsonLd />
