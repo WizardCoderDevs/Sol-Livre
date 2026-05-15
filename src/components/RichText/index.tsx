@@ -26,14 +26,14 @@ function RenderNode({ node }: { node: AnyNode }) {
 
       if (children.length === 1 && children[0].type === 'text' && children[0].format === 1) {
         return (
-          <h2 className="mt-8 mb-4 text-2xl font-bold text-foreground">
+          <h2 className="mt-10 mb-4 text-2xl font-bold text-foreground leading-tight">
             {children[0].text}
           </h2>
         )
       }
 
       return (
-        <p className="mb-4 text-lg leading-relaxed text-foreground/80">
+        <p className="mb-6 text-lg leading-relaxed text-foreground/85 tracking-wide">
           {children.map((child: AnyNode, i: number) => (
             <RenderNode key={i} node={child} />
           ))}
@@ -43,7 +43,7 @@ function RenderNode({ node }: { node: AnyNode }) {
 
     case 'headingOne':
       return (
-        <h1 className="mb-4 text-4xl font-bold text-foreground">
+        <h1 className="mb-6 text-4xl font-bold text-foreground leading-tight">
           {children.map((child: AnyNode, i: number) => (
             <RenderNode key={i} node={child} />
           ))}
@@ -52,7 +52,7 @@ function RenderNode({ node }: { node: AnyNode }) {
 
     case 'headingTwo':
       return (
-        <h2 className="mb-4 text-3xl font-bold text-foreground">
+        <h2 className="mt-10 mb-4 text-2xl font-bold text-foreground leading-tight">
           {children.map((child: AnyNode, i: number) => (
             <RenderNode key={i} node={child} />
           ))}
@@ -61,7 +61,7 @@ function RenderNode({ node }: { node: AnyNode }) {
 
     case 'headingThree':
       return (
-        <h3 className="mb-4 text-2xl font-bold text-foreground">
+        <h3 className="mt-8 mb-3 text-xl font-semibold text-foreground leading-snug">
           {children.map((child: AnyNode, i: number) => (
             <RenderNode key={i} node={child} />
           ))}
@@ -70,7 +70,7 @@ function RenderNode({ node }: { node: AnyNode }) {
 
     case 'headingFour':
       return (
-        <h4 className="mb-4 text-xl font-bold text-foreground">
+        <h4 className="mt-6 mb-2 text-lg font-semibold text-foreground leading-snug">
           {children.map((child: AnyNode, i: number) => (
             <RenderNode key={i} node={child} />
           ))}
@@ -79,7 +79,7 @@ function RenderNode({ node }: { node: AnyNode }) {
 
     case 'list':
       return (
-        <ul className="mb-4 list-disc list-inside text-lg text-foreground/80">
+        <ul className="mb-6 ml-6 list-disc space-y-2 text-lg text-foreground/85 leading-relaxed">
           {children.map((child: AnyNode, i: number) => (
             <RenderNode key={i} node={child} />
           ))}
@@ -88,7 +88,7 @@ function RenderNode({ node }: { node: AnyNode }) {
 
     case 'listitem':
       return (
-        <li>
+        <li className="text-foreground/85">
           {children.map((child: AnyNode, i: number) => (
             <RenderNode key={i} node={child} />
           ))}
@@ -97,7 +97,7 @@ function RenderNode({ node }: { node: AnyNode }) {
 
     case 'quote':
       return (
-        <blockquote className="mb-4 border-l-4 border-accent pl-4 italic text-foreground/70">
+        <blockquote className="my-8 border-l-4 border-accent pl-6 py-2 italic text-xl text-foreground/75 leading-relaxed">
           {children.map((child: AnyNode, i: number) => (
             <RenderNode key={i} node={child} />
           ))}
@@ -126,20 +126,21 @@ function RenderNode({ node }: { node: AnyNode }) {
     case 'text': {
       let content: React.ReactNode = node.text
 
-      if (node.bold) {
-        content = <strong>{content}</strong>
+      const format = node.format || 0
+      if (format & 1) {
+        content = <strong className="font-semibold text-foreground">{content}</strong>
       }
-      if (node.italic) {
+      if (format & 2) {
         content = <em>{content}</em>
       }
-      if (node.underline) {
-        content = <u>{content}</u>
+      if (format & 4) {
+        content = <u className="underline decoration-accent/50">{content}</u>
       }
-      if (node.strikethrough) {
+      if (format & 8) {
         content = <s>{content}</s>
       }
       if (node.code) {
-        content = <code className="rounded bg-surface px-1 py-0.5 text-sm">{content}</code>
+        content = <code className="rounded bg-surface px-1.5 py-0.5 text-sm font-mono">{content}</code>
       }
 
       return <>{content}</>

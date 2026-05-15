@@ -173,9 +173,9 @@ export default async function BlogPostPage({ params }: PageProps) {
             </div>
           </div>
 
-          <div className="mx-auto max-w-7xl px-6 pb-16">
+          <div className="mx-auto max-w-3xl px-6 pb-16">
             {post.content && typeof post.content === 'object' && 'root' in post.content && (
-              <RichText data={post.content} className="mx-auto max-w-4xl" />
+              <RichText data={post.content} className="mx-auto max-w-3xl" />
             )}
           </div>
         </article>
